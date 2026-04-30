@@ -22,16 +22,18 @@ export const Countdown = () => {
   }, []);
 
   return (
-    <section id="countdown" className="relative py-24 px-4">
+    <section id="countdown" className="relative py-24 sm:py-32 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto text-center">
-        <p className="font-pixel text-[10px] text-sky tracking-widest mb-4">★ COUNTDOWN ★</p>
-        <h2 className="text-4xl md:text-5xl font-display mb-3 text-ink">
+        <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  COUNTDOWN  ★</p>
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-ink mb-4">
           Countdown to <span className="gold-underline">Our Big Day</span>
         </h2>
-        <p className="text-ink-soft mb-12 text-lg">Every second counts when caps are about to fly.</p>
+        <p className="text-ink-soft text-base sm:text-lg mb-14 max-w-xl mx-auto">
+          Every second counts when caps are about to fly.
+        </p>
 
         {t ? (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {[
               { v: t.days, l: "DAYS" },
               { v: t.hours, l: "HOURS" },
@@ -40,19 +42,21 @@ export const Countdown = () => {
             ].map((u) => (
               <div
                 key={u.l}
-                className="relative card-elegant pixel-corners p-6 md:p-8 hover:-translate-y-1 transition-transform duration-300"
-                style={{ boxShadow: "var(--shadow-gold)" }}
+                className="relative card-elegant p-6 sm:p-8 hover:-translate-y-1 transition-transform duration-300"
               >
-                <div className="font-pixel text-3xl md:text-5xl text-gold leading-none mb-3 tabular-nums">
+                <div className="pixel-corner-tl !bg-sky" style={{ boxShadow: "8px 0 0 hsl(var(--gold)), 0 8px 0 hsl(var(--gold))" }} />
+                <div className="pixel-corner-br !bg-sky" style={{ boxShadow: "-8px 0 0 hsl(var(--gold)), 0 -8px 0 hsl(var(--gold))" }} />
+
+                <div className="font-pixel text-3xl sm:text-4xl md:text-5xl text-gold leading-none mb-4 tabular-nums">
                   {String(u.v).padStart(2, "0")}
                 </div>
-                <div className="font-pixel text-[10px] text-ink-soft tracking-widest">{u.l}</div>
+                <div className="font-pixel text-[9px] sm:text-[10px] text-ink-soft tracking-[0.25em]">{u.l}</div>
               </div>
             ))}
           </div>
         ) : (
-          <div className="card-elegant p-12 animate-pulse-glow">
-            <h3 className="text-3xl md:text-5xl font-display text-gold">🎓 Graduation Day is Here!</h3>
+          <div className="card-invitation p-12 animate-pulse-glow">
+            <h3 className="font-display text-3xl sm:text-5xl text-gold">🎓 Graduation Day is Here!</h3>
           </div>
         )}
       </div>

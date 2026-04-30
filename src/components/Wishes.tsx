@@ -10,26 +10,24 @@ export const Wishes = () => {
   const [name, setName] = useState("");
   const [rel, setRel] = useState<Rel>("Friend");
   const [wish, setWish] = useState("");
-  const [hp, setHp] = useState(""); // honeypot
+  const [hp, setHp] = useState("");
   const [done, setDone] = useState(false);
   const [err, setErr] = useState("");
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (hp) return; // bot
+    if (hp) return;
     const n = name.trim();
     const w = wish.trim();
     if (!n) { setErr("Please tell us your name."); return; }
     if (!w) { setErr("Please share a wish."); return; }
     if (w.length > 500) { setErr("Wish too long (max 500)."); return; }
     setErr("");
-
     try {
       const list = JSON.parse(localStorage.getItem("wishes") || "[]");
       list.push({ name: n, relationship: rel, wish: w, at: new Date().toISOString() });
       localStorage.setItem("wishes", JSON.stringify(list));
     } catch {}
-
     playClick();
     setDone(true);
     burstConfetti();
@@ -37,84 +35,72 @@ export const Wishes = () => {
   };
 
   return (
-    <section id="wishes" className="relative py-24 px-4 bg-white/40">
+    <section id="wishes" className="relative py-24 sm:py-32 px-4 sm:px-6">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
-          <p className="font-pixel text-[10px] text-sky tracking-widest mb-4">★ WISHES ★</p>
-          <h2 className="text-4xl md:text-5xl font-display text-ink">
+          <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  WISHES  ★</p>
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-ink">
             Leave Us a <span className="gold-underline">Wish</span>
           </h2>
         </div>
 
-        <div className="card-elegant p-8 md:p-10">
+        <div className="relative card-invitation p-8 sm:p-12">
+          <div className="pixel-corner-tl" />
+          <div className="pixel-corner-tr" />
+          <div className="pixel-corner-bl" />
+          <div className="pixel-corner-br" />
+
           {done ? (
-            <div className="text-center py-6 animate-fade-up">
-              <CheckCircle2 className="w-16 h-16 text-gold mx-auto mb-4" />
-              <h3 className="font-display text-2xl text-ink mb-2">Your wish has been sent.</h3>
+            <div className="text-center py-8 animate-fade-up">
+              <div className="mx-auto mb-5 w-20 h-20 rounded-full flex items-center justify-center" style={{ background: "var(--gradient-gold-soft)" }}>
+                <CheckCircle2 className="w-10 h-10 text-gold" />
+              </div>
+              <h3 className="font-display text-3xl text-ink mb-2">Your wish has been sent.</h3>
               <p className="text-ink-soft">Thank you for celebrating with us!</p>
               <button
                 onClick={() => { setDone(false); setName(""); setWish(""); }}
-                className="mt-6 font-pixel text-[10px] text-sky tracking-widest hover:text-gold"
+                className="mt-7 font-pixel text-[10px] text-sky tracking-[0.2em] hover:text-gold transition-colors"
               >
                 + LEAVE ANOTHER
               </button>
             </div>
           ) : (
-            <form onSubmit={submit} className="space-y-5">
-              {/* honeypot */}
+            <form onSubmit={submit} className="space-y-6">
               <input
-                type="text"
-                value={hp}
-                onChange={(e) => setHp(e.target.value)}
-                tabIndex={-1}
-                autoComplete="off"
-                aria-hidden="true"
+                type="text" value={hp} onChange={(e) => setHp(e.target.value)}
+                tabIndex={-1} autoComplete="off" aria-hidden="true"
                 style={{ position: "absolute", left: "-9999px", opacity: 0 }}
               />
 
               <div>
-                <label className="font-pixel text-[10px] text-ink-soft tracking-widest mb-2 block">YOUR NAME</label>
-                <input
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  maxLength={80}
-                  className="w-full px-4 py-3 rounded-xl bg-cream border border-gold/30 focus:border-gold outline-none"
-                  required
-                />
+                <label className="label-pixel">Your Name</label>
+                <input value={name} onChange={(e) => setName(e.target.value)} maxLength={80} className="input-field" required />
               </div>
 
               <div>
-                <label className="font-pixel text-[10px] text-ink-soft tracking-widest mb-2 block">RELATIONSHIP</label>
-                <select
-                  value={rel}
-                  onChange={(e) => setRel(e.target.value as Rel)}
-                  className="w-full px-4 py-3 rounded-xl bg-cream border border-gold/30 focus:border-gold outline-none"
-                >
+                <label className="label-pixel">Relationship</label>
+                <select value={rel} onChange={(e) => setRel(e.target.value as Rel)} className="input-field appearance-none cursor-pointer">
                   {["Friend", "Family", "Classmate", "Teacher", "Other"].map(o => <option key={o}>{o}</option>)}
                 </select>
               </div>
 
               <div>
-                <label className="font-pixel text-[10px] text-ink-soft tracking-widest mb-2 block">YOUR WISH</label>
+                <label className="label-pixel">Your Wish</label>
                 <textarea
                   value={wish}
                   onChange={(e) => setWish(e.target.value)}
                   maxLength={500}
                   rows={4}
-                  className="w-full px-4 py-3 rounded-xl bg-cream border border-gold/30 focus:border-gold outline-none resize-none"
+                  className="input-field resize-none"
                   placeholder="Share a kind word, memory, or blessing..."
                   required
                 />
-                <p className="text-xs text-ink-soft mt-1 text-right">{wish.length}/500</p>
+                <p className="text-xs text-ink-soft mt-1.5 text-right font-pixel tracking-wider">{wish.length}/500</p>
               </div>
 
               {err && <p className="text-sm text-destructive">{err}</p>}
 
-              <button
-                type="submit"
-                className="w-full px-7 py-4 rounded-full font-semibold text-white inline-flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5"
-                style={{ background: "var(--gradient-gold)", boxShadow: "var(--shadow-gold)" }}
-              >
+              <button type="submit" className="btn-primary w-full">
                 <Heart className="w-4 h-4" />
                 Send Wish
               </button>
