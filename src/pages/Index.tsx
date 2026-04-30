@@ -1,16 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { AudioProvider } from "@/contexts/AudioContext";
+import { Hero } from "@/components/Hero";
+import { Countdown } from "@/components/Countdown";
+import { CeremonyDetails } from "@/components/CeremonyDetails";
+import { GroupPhoto } from "@/components/GroupPhoto";
+import { Graduates } from "@/components/Graduates";
+import { RSVP } from "@/components/RSVP";
+import { Wishes } from "@/components/Wishes";
+import { SoundButton } from "@/components/SoundButton";
+import { BackToTop } from "@/components/BackToTop";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <AudioProvider>
+      <main className="min-h-screen">
+        <Hero />
+        <Countdown />
+        <CeremonyDetails />
+        <GroupPhoto />
+        <Graduates />
+        <RSVP />
+        <Wishes />
+
+        <footer className="py-12 px-4 text-center">
+          <div className="max-w-2xl mx-auto">
+            <div className="font-pixel text-[10px] text-sky tracking-widest mb-3">★ CLASS OF 2027 ★</div>
+            <p className="text-ink-soft italic">
+              Made with friendship, deadlines, and a little bit of panic.
+            </p>
+          </div>
+        </footer>
+
+        <SoundButton />
+        <BackToTop />
+      </main>
+    </AudioProvider>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;

@@ -13,7 +13,27 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ['Fraunces', 'Georgia', 'serif'],
+        body: ['Nunito', 'system-ui', 'sans-serif'],
+        pixel: ['"Press Start 2P"', 'monospace'],
+      },
       colors: {
+        cream: "hsl(var(--cream))",
+        "cream-deep": "hsl(var(--cream-deep))",
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          soft: "hsl(var(--gold-soft))",
+          glow: "hsl(var(--gold-glow))",
+        },
+        sky: {
+          DEFAULT: "hsl(var(--sky))",
+          soft: "hsl(var(--sky-soft))",
+        },
+        ink: {
+          DEFAULT: "hsl(var(--ink))",
+          soft: "hsl(var(--ink-soft))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
