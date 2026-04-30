@@ -19,14 +19,11 @@ export const RSVP = () => {
     if (!n) { setError("Please enter your name."); return; }
     if (n.length > 80) { setError("Name is too long."); return; }
     setError("");
-
-    // Save to local state (ready to swap for Supabase / Sheets later)
     try {
       const existing = JSON.parse(localStorage.getItem("rsvps") || "[]");
       existing.push({ name: n, status, message: message.trim().slice(0, 500), at: new Date().toISOString() });
       localStorage.setItem("rsvps", JSON.stringify(existing));
     } catch {}
-
     playClick();
     setSubmitted(true);
     burstConfetti();
@@ -34,48 +31,55 @@ export const RSVP = () => {
   };
 
   return (
-    <section id="rsvp" className="relative py-24 px-4">
+    <section id="rsvp" className="relative py-24 sm:py-32 px-4 sm:px-6">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
-          <p className="font-pixel text-[10px] text-sky tracking-widest mb-4">★ RSVP ★</p>
-          <h2 className="text-4xl md:text-5xl font-display text-ink">
+          <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  RSVP  ★</p>
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-ink">
             Will You <span className="gold-underline">Join Us?</span>
           </h2>
         </div>
 
-        <div className="card-elegant p-8 md:p-10">
+        <div className="relative card-invitation p-8 sm:p-12">
+          <div className="pixel-corner-tl" />
+          <div className="pixel-corner-tr" />
+          <div className="pixel-corner-bl" />
+          <div className="pixel-corner-br" />
+
           {submitted ? (
-            <div className="text-center py-6 animate-fade-up">
-              <CheckCircle2 className="w-16 h-16 text-gold mx-auto mb-4" />
-              <h3 className="font-display text-2xl text-ink mb-2">Thank you!</h3>
+            <div className="text-center py-8 animate-fade-up">
+              <div className="mx-auto mb-5 w-20 h-20 rounded-full flex items-center justify-center" style={{ background: "var(--gradient-gold-soft)" }}>
+                <CheckCircle2 className="w-10 h-10 text-gold" />
+              </div>
+              <h3 className="font-display text-3xl text-ink mb-2">Thank you!</h3>
               <p className="text-ink-soft">Your RSVP has been saved.</p>
               <button
                 onClick={() => { setSubmitted(false); setName(""); setMessage(""); }}
-                className="mt-6 font-pixel text-[10px] text-sky tracking-widest hover:text-gold"
+                className="mt-7 font-pixel text-[10px] text-sky tracking-[0.2em] hover:text-gold transition-colors"
               >
                 + ADD ANOTHER
               </button>
             </div>
           ) : (
-            <form onSubmit={onSubmit} className="space-y-5">
+            <form onSubmit={onSubmit} className="space-y-6">
               <div>
-                <label className="font-pixel text-[10px] text-ink-soft tracking-widest mb-2 block">YOUR NAME</label>
+                <label className="label-pixel">Your Name</label>
                 <input
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   maxLength={80}
-                  className="w-full px-4 py-3 rounded-xl bg-cream border border-gold/30 focus:border-gold outline-none transition-colors"
+                  className="input-field"
                   placeholder="e.g. Sokha"
                   required
                 />
               </div>
 
               <div>
-                <label className="font-pixel text-[10px] text-ink-soft tracking-widest mb-2 block">WILL YOU ATTEND?</label>
+                <label className="label-pixel">Will You Attend?</label>
                 <select
                   value={status}
                   onChange={(e) => setStatus(e.target.value as Status)}
-                  className="w-full px-4 py-3 rounded-xl bg-cream border border-gold/30 focus:border-gold outline-none transition-colors"
+                  className="input-field appearance-none cursor-pointer"
                 >
                   <option value="yes">Yes, I'll be there! 🎉</option>
                   <option value="maybe">Maybe</option>
@@ -84,24 +88,20 @@ export const RSVP = () => {
               </div>
 
               <div>
-                <label className="font-pixel text-[10px] text-ink-soft tracking-widest mb-2 block">MESSAGE (OPTIONAL)</label>
+                <label className="label-pixel">Message (optional)</label>
                 <textarea
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   maxLength={500}
                   rows={3}
-                  className="w-full px-4 py-3 rounded-xl bg-cream border border-gold/30 focus:border-gold outline-none transition-colors resize-none"
+                  className="input-field resize-none"
                   placeholder="Anything you'd like to share?"
                 />
               </div>
 
               {error && <p className="text-sm text-destructive">{error}</p>}
 
-              <button
-                type="submit"
-                className="w-full px-7 py-4 rounded-full font-semibold text-white inline-flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5"
-                style={{ background: "var(--gradient-gold)", boxShadow: "var(--shadow-gold)" }}
-              >
+              <button type="submit" className="btn-primary w-full">
                 <Send className="w-4 h-4" />
                 Send RSVP
               </button>
