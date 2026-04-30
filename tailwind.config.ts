@@ -20,6 +20,7 @@ export default {
       },
       colors: {
         cream: "hsl(var(--cream))",
+        "cream-warm": "hsl(var(--cream-warm))",
         "cream-deep": "hsl(var(--cream-deep))",
         gold: {
           DEFAULT: "hsl(var(--gold))",
