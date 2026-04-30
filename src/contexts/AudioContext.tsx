@@ -26,20 +26,34 @@ export const AudioProvider = ({ children }: { children: ReactNode }) => {
     a.loop = true;
     a.volume = 0.15;
     a.preload = "auto";
+    (a as any).playsInline = true;
     audioRef.current = a;
 
-    // Try autoplay
-    const tryPlay = async () => {
+    let started = false;
+    const start = async () => {
+      if (started) return;
       try {
         await a.play();
+        started = true;
         setSoundOn(true);
+        cleanup();
       } catch {
-        setShowAutoplayPrompt(true);
+        // still blocked — wait for next interaction
       }
     };
-    tryPlay();
+
+    const events: (keyof DocumentEventMap)[] = [
+      "pointerdown", "click", "touchstart", "keydown", "scroll",
+    ];
+    const onInteract = () => start();
+    const cleanup = () => events.forEach(ev => document.removeEventListener(ev, onInteract));
+    events.forEach(ev => document.addEventListener(ev, onInteract, { once: false, passive: true }));
+
+    // Try immediately (works if browser permits)
+    start();
 
     return () => {
+      cleanup();
       a.pause();
       a.src = "";
     };
