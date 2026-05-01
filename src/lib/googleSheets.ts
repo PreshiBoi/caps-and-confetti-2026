@@ -1,6 +1,6 @@
 // Paste your deployed Google Apps Script Web App URL between the quotes below.
 // It should look like: https://script.google.com/macros/s/AKfyc.../exec
-export const GOOGLE_SCRIPT_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+export const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzRwwBBIkLR1qxlY0-UyjwGehuA8vpx2uJvMlhNJxMOKNoLaeKyrQXvG8cTFp7d26ST/exec";
 
 export type SheetPayload = {
   type: "RSVP" | "WISH";
