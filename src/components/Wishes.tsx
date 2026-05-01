@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useAudio } from "@/contexts/AudioContext";
 import { burstConfetti } from "@/lib/confetti";
-import { Heart, CheckCircle2 } from "lucide-react";
+import { sendToGoogleSheet } from "@/lib/googleSheets";
+import { Heart, CheckCircle2, Loader2 } from "lucide-react";
 
 type Rel = "Friend" | "Family" | "Classmate" | "Teacher" | "Other";
 
@@ -12,9 +13,10 @@ export const Wishes = () => {
   const [wish, setWish] = useState("");
   const [hp, setHp] = useState("");
   const [done, setDone] = useState(false);
+  const [sending, setSending] = useState(false);
   const [err, setErr] = useState("");
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (hp) return;
     const n = name.trim();
@@ -23,15 +25,32 @@ export const Wishes = () => {
     if (!w) { setErr("Please share a wish."); return; }
     if (w.length > 500) { setErr("Wish too long (max 500)."); return; }
     setErr("");
+    setSending(true);
     try {
-      const list = JSON.parse(localStorage.getItem("wishes") || "[]");
-      list.push({ name: n, relationship: rel, wish: w, at: new Date().toISOString() });
-      localStorage.setItem("wishes", JSON.stringify(list));
-    } catch {}
-    playClick();
-    setDone(true);
-    burstConfetti();
-    playVictory();
+      try {
+        const list = JSON.parse(localStorage.getItem("wishes") || "[]");
+        list.push({ name: n, relationship: rel, wish: w, at: new Date().toISOString() });
+        localStorage.setItem("wishes", JSON.stringify(list));
+      } catch {}
+
+      await sendToGoogleSheet({
+        type: "WISH",
+        guestName: n,
+        attendance: "",
+        relationship: rel,
+        message: w,
+        userAgent: navigator.userAgent,
+      });
+
+      playClick();
+      setDone(true);
+      burstConfetti();
+      playVictory();
+    } catch {
+      setErr("Sorry, we couldn't send your wish. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -100,9 +119,9 @@ export const Wishes = () => {
 
               {err && <p className="text-sm text-destructive">{err}</p>}
 
-              <button type="submit" className="btn-primary w-full">
-                <Heart className="w-4 h-4" />
-                Send Wish
+              <button type="submit" disabled={sending} className="btn-primary w-full disabled:opacity-60 disabled:cursor-not-allowed">
+                {sending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Heart className="w-4 h-4" />}
+                {sending ? "Sending..." : "Send Wish"}
               </button>
             </form>
           )}
