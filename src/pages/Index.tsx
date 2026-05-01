@@ -14,7 +14,7 @@ const Index = () => {
   return (
     <AudioProvider>
       <ConfettiRain />
-      <main className="relative z-10 min-h-screen">
+      <main className="relative z-10 min-h-screen overflow-x-hidden">
         <Hero />
         <Countdown />
         <CeremonyDetails />
