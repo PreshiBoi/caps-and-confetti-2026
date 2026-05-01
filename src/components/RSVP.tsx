@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useAudio } from "@/contexts/AudioContext";
 import { burstConfetti } from "@/lib/confetti";
-import { Send, CheckCircle2 } from "lucide-react";
+import { sendToGoogleSheet } from "@/lib/googleSheets";
+import { Send, CheckCircle2, Loader2 } from "lucide-react";
 
 type Status = "yes" | "maybe" | "no";
 
@@ -11,23 +12,42 @@ export const RSVP = () => {
   const [status, setStatus] = useState<Status>("yes");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const n = name.trim();
     if (!n) { setError("Please enter your name."); return; }
     if (n.length > 80) { setError("Name is too long."); return; }
     setError("");
+    setSending(true);
+    const msg = message.trim().slice(0, 500);
     try {
-      const existing = JSON.parse(localStorage.getItem("rsvps") || "[]");
-      existing.push({ name: n, status, message: message.trim().slice(0, 500), at: new Date().toISOString() });
-      localStorage.setItem("rsvps", JSON.stringify(existing));
-    } catch {}
-    playClick();
-    setSubmitted(true);
-    burstConfetti();
-    playVictory();
+      try {
+        const existing = JSON.parse(localStorage.getItem("rsvps") || "[]");
+        existing.push({ name: n, status, message: msg, at: new Date().toISOString() });
+        localStorage.setItem("rsvps", JSON.stringify(existing));
+      } catch {}
+
+      await sendToGoogleSheet({
+        type: "RSVP",
+        guestName: n,
+        attendance: status,
+        relationship: "",
+        message: msg,
+        userAgent: navigator.userAgent,
+      });
+
+      playClick();
+      setSubmitted(true);
+      burstConfetti();
+      playVictory();
+    } catch (err) {
+      setError("Sorry, we couldn't send your RSVP. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
