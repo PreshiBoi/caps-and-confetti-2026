@@ -121,9 +121,9 @@ export const RSVP = () => {
 
               {error && <p className="text-sm text-destructive">{error}</p>}
 
-              <button type="submit" className="btn-primary w-full">
-                <Send className="w-4 h-4" />
-                Send RSVP
+              <button type="submit" disabled={sending} className="btn-primary w-full disabled:opacity-60 disabled:cursor-not-allowed">
+                {sending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
+                {sending ? "Sending..." : "Send RSVP"}
               </button>
             </form>
           )}
