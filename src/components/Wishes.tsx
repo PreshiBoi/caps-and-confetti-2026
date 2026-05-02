@@ -28,7 +28,7 @@ export const Wishes = () => {
         const list = JSON.parse(localStorage.getItem("wishes") || "[]");
         list.push({ name: n, wish: w, at: new Date().toISOString() });
         localStorage.setItem("wishes", JSON.stringify(list));
-      } catch {}
+      } catch { }
 
       await sendToGoogleSheet({
         type: "WISH",
@@ -55,7 +55,7 @@ export const Wishes = () => {
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
           <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  WISHES  ★</p>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-ink leading-tight">
+          <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-ink leading-tight">
             Leave Us a <span className="text-gold">Wish</span>
           </h2>
         </div>
