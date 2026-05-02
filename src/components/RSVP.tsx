@@ -28,7 +28,7 @@ export const RSVP = () => {
         const existing = JSON.parse(localStorage.getItem("rsvps") || "[]");
         existing.push({ name: n, status, message: msg, at: new Date().toISOString() });
         localStorage.setItem("rsvps", JSON.stringify(existing));
-      } catch {}
+      } catch { }
 
       await sendToGoogleSheet({
         type: "RSVP",
@@ -117,6 +117,7 @@ export const RSVP = () => {
                   className="input-field resize-none"
                   placeholder="Anything you'd like to share?"
                 />
+                <p className="text-xs text-ink-soft mt-1.5 text-right font-pixel tracking-wider">{message.length}/500</p>
               </div>
 
               {error && <p className="text-sm text-destructive">{error}</p>}
