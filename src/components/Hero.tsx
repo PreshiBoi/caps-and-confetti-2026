@@ -62,7 +62,7 @@ export const Hero = () => {
             ].map((c) => (
               <div key={c.l} className="rounded-2xl bg-cream-warm/70 border border-gold/25 px-4 py-4">
                 <div className="font-pixel text-[8px] text-sky tracking-[0.2em] mb-1.5">{c.l.toUpperCase()}</div>
-                <div className="font-display text-lg sm:text-xl text-ink">{c.v}</div>
+                <div className="font-display text-xs sm:text-sm text-ink leading-snug">{c.v}</div>
               </div>
             ))}
           </div>
