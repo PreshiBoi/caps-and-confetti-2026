@@ -5,14 +5,14 @@ const GCAL_URL =
   "https://calendar.google.com/calendar/render?action=TEMPLATE" +
   "&text=" + encodeURIComponent("Graduation Ceremony") +
   "&dates=20270509T053000Z/20270509T100000Z" +
-  "&details=" + encodeURIComponent("Class of 2027 graduation ceremony — Mike, Alex, Manith & Nithpotism.") +
-  "&location=" + encodeURIComponent("Cambodia") +
+  "&details=" + encodeURIComponent("Class of 2026 graduation ceremony — Tey Tey, Mak Oun Orn Jit, Nithpotiser & Manon.") +
+  "&location=" + encodeURIComponent("Sokha Hotel") +
   "&ctz=Asia/Phnom_Penh";
 
 const items = [
-  { icon: Calendar, label: "Date", value: "May 9, 2027" },
+  { icon: Calendar, label: "Date", value: "May 9, 2026" },
   { icon: Clock, label: "Time", value: "12:30 – 5:00 PM" },
-  { icon: MapPin, label: "Location", value: "Cambodia" },
+  { icon: MapPin, label: "Location", value: "Sokha Hotel Phnom Penh" },
 ];
 
 export const CeremonyDetails = () => {
