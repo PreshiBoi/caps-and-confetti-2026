@@ -13,9 +13,9 @@
     --cream: 41 100% 95%;
     --cream-warm: 38 78% 92%;
     --cream-deep: 38 55% 88%;
-    --gold: 43 79% 46%;
-    --gold-soft: 43 85% 70%;
-    --gold-glow: 43 95% 88%;
+    --gold: 45 90% 58%;
+    --gold-soft: 45 92% 72%;
+    --gold-glow: 45 95% 88%;
     --sky: 197 65% 69%;
     --sky-soft: 197 75% 88%;
     --ink: 28 22% 18%;
@@ -31,7 +31,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 28 22% 18%;
 
-    --primary: 43 79% 46%;
+    --primary: 45 90% 58%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 197 65% 69%;
@@ -48,7 +48,7 @@
 
     --border: 43 50% 84%;
     --input: 43 45% 90%;
-    --ring: 43 79% 46%;
+    --ring: 45 90% 58%;
 
     --radius: 1.25rem;
 
@@ -97,9 +97,10 @@
     overflow-x: hidden;
   }
   h1, h2, h3, h4 {
-    font-family: 'Fraunces', Georgia, serif;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-family: 'Press Start 2P', monospace;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.35;
     color: hsl(var(--ink));
   }
   ::selection { background: hsl(var(--gold) / 0.3); }
@@ -107,25 +108,12 @@
 
 @layer components {
   .font-pixel { font-family: 'Press Start 2P', monospace; letter-spacing: 0.04em; }
-  .font-display { font-family: 'Fraunces', Georgia, serif; }
+  .font-display { font-family: 'Press Start 2P', monospace; letter-spacing: 0.02em; line-height: 1.35; }
 
   .gold-underline {
-    position: relative;
     display: inline-block;
     color: hsl(var(--gold));
-    font-style: italic;
-    font-weight: 600;
-  }
-  .gold-underline::after {
-    content: '';
-    position: absolute;
-    left: 2%;
-    right: 2%;
-    bottom: 0.05em;
-    height: 0.22em;
-    background: hsl(var(--sky) / 0.55);
-    border-radius: 999px;
-    z-index: -1;
+    font-weight: 400;
   }
 
   .card-elegant {

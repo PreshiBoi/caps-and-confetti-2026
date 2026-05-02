@@ -25,8 +25,8 @@ export const Countdown = () => {
     <section id="countdown" className="relative py-24 sm:py-32 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto text-center">
         <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  COUNTDOWN  ★</p>
-        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-ink mb-4">
-          Countdown to <span className="gold-underline">Our Big Day</span>
+        <h2 className="font-display text-lg sm:text-2xl md:text-3xl text-ink mb-4 leading-tight">
+          Countdown to <span className="text-gold">Our Big Day</span>
         </h2>
         <p className="text-ink-soft text-base sm:text-lg mb-14 max-w-xl mx-auto">
           Every second counts when caps are about to fly.
@@ -56,7 +56,7 @@ export const Countdown = () => {
           </div>
         ) : (
           <div className="card-invitation p-12 animate-pulse-glow">
-            <h3 className="font-display text-3xl sm:text-5xl text-gold">🎓 Graduation Day is Here!</h3>
+            <h3 className="font-display text-lg sm:text-2xl text-gold leading-tight">🎓 Graduation Day is Here!</h3>
           </div>
         )}
       </div>

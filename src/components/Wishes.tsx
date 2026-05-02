@@ -4,12 +4,9 @@ import { burstConfetti } from "@/lib/confetti";
 import { sendToGoogleSheet } from "@/lib/googleSheets";
 import { Heart, CheckCircle2, Loader2 } from "lucide-react";
 
-type Rel = "Friend" | "Family" | "Classmate" | "Teacher" | "Other";
-
 export const Wishes = () => {
   const { playClick, playVictory } = useAudio();
   const [name, setName] = useState("");
-  const [rel, setRel] = useState<Rel>("Friend");
   const [wish, setWish] = useState("");
   const [hp, setHp] = useState("");
   const [done, setDone] = useState(false);
@@ -29,7 +26,7 @@ export const Wishes = () => {
     try {
       try {
         const list = JSON.parse(localStorage.getItem("wishes") || "[]");
-        list.push({ name: n, relationship: rel, wish: w, at: new Date().toISOString() });
+        list.push({ name: n, wish: w, at: new Date().toISOString() });
         localStorage.setItem("wishes", JSON.stringify(list));
       } catch {}
 
@@ -37,7 +34,7 @@ export const Wishes = () => {
         type: "WISH",
         guestName: n,
         attendance: "",
-        relationship: rel,
+        relationship: "",
         message: w,
         userAgent: navigator.userAgent,
       });
@@ -58,8 +55,8 @@ export const Wishes = () => {
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
           <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  WISHES  ★</p>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-ink">
-            Leave Us a <span className="gold-underline">Wish</span>
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-ink leading-tight">
+            Leave Us a <span className="text-gold">Wish</span>
           </h2>
         </div>
 
@@ -74,7 +71,7 @@ export const Wishes = () => {
               <div className="mx-auto mb-5 w-20 h-20 rounded-full flex items-center justify-center" style={{ background: "var(--gradient-gold-soft)" }}>
                 <CheckCircle2 className="w-10 h-10 text-gold" />
               </div>
-              <h3 className="font-display text-3xl text-ink mb-2">Your wish has been sent.</h3>
+              <h3 className="font-display text-xl sm:text-2xl text-ink mb-2 leading-tight">Your wish has been sent.</h3>
               <p className="text-ink-soft">Thank you for celebrating with us!</p>
               <button
                 onClick={() => { setDone(false); setName(""); setWish(""); }}
@@ -94,13 +91,6 @@ export const Wishes = () => {
               <div>
                 <label className="label-pixel">Your Name</label>
                 <input value={name} onChange={(e) => setName(e.target.value)} maxLength={80} className="input-field" required />
-              </div>
-
-              <div>
-                <label className="label-pixel">Relationship</label>
-                <select value={rel} onChange={(e) => setRel(e.target.value as Rel)} className="input-field appearance-none cursor-pointer">
-                  {["Friend", "Family", "Classmate", "Teacher", "Other"].map(o => <option key={o}>{o}</option>)}
-                </select>
               </div>
 
               <div>

@@ -1,12 +1,13 @@
 import { Camera } from "lucide-react";
+import { GROUP_PHOTO } from "@/assets/graduates/photos";
 
 export const GroupPhoto = () => {
   return (
     <section className="relative py-24 sm:py-32 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto text-center">
         <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  THE SQUAD  ★</p>
-        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-ink mb-12">
-          Our Graduation <span className="gold-underline">Squad</span>
+        <h2 className="font-display text-lg sm:text-2xl md:text-3xl text-ink mb-12 leading-tight">
+          Our Graduation <span className="text-gold">Squad</span>
         </h2>
 
         <div className="relative inline-block w-full">
@@ -23,19 +24,24 @@ export const GroupPhoto = () => {
               boxShadow: "var(--shadow-invitation)",
             }}
           >
-            {/* Inner subtle frame */}
-            <div className="absolute inset-3 rounded-[1.5rem] border border-white/60 pointer-events-none" />
-            <div className="text-center p-8 relative">
-              <div className="mx-auto mb-5 w-20 h-20 rounded-full bg-white/70 flex items-center justify-center">
-                <Camera className="w-10 h-10 text-gold" strokeWidth={1.5} />
+            <div className="absolute inset-3 rounded-[1.5rem] border border-white/60 pointer-events-none z-10" />
+            {GROUP_PHOTO ? (
+              <img src={GROUP_PHOTO} alt="Graduation squad group photo" className="absolute inset-0 w-full h-full object-cover" />
+            ) : (
+              <div className="text-center p-8 relative">
+                <div className="mx-auto mb-5 w-20 h-20 rounded-full bg-white/70 flex items-center justify-center">
+                  <Camera className="w-10 h-10 text-gold" strokeWidth={1.5} />
+                </div>
+                <p className="font-pixel text-[9px] text-ink tracking-[0.25em] mb-2">GROUP PHOTO PLACEHOLDER</p>
+                <p className="text-sm text-ink-soft" style={{ fontFamily: "'Nunito', sans-serif" }}>
+                  Add your photo in <code>src/assets/graduates/photos.ts</code>
+                </p>
               </div>
-              <p className="font-pixel text-[9px] text-ink tracking-[0.25em] mb-2">GROUP PHOTO PLACEHOLDER</p>
-              <p className="text-sm text-ink-soft">Replace with your squad photo</p>
-            </div>
+            )}
           </div>
         </div>
 
-        <p className="mt-10 text-base sm:text-lg text-ink-soft italic max-w-xl mx-auto">
+        <p className="mt-10 text-base sm:text-lg text-ink-soft italic max-w-xl mx-auto" style={{ fontFamily: "'Nunito', sans-serif" }}>
           "Together we survived deadlines, exams, and group projects."
         </p>
       </div>

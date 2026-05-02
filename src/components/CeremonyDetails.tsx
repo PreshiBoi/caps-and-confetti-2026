@@ -1,16 +1,49 @@
 import { Calendar, Clock, MapPin, CalendarPlus } from "lucide-react";
 import { useAudio } from "@/contexts/AudioContext";
 
-const GCAL_URL =
-  "https://calendar.google.com/calendar/render?action=TEMPLATE" +
-  "&text=" + encodeURIComponent("Graduation Ceremony") +
-  "&dates=20270509T053000Z/20270509T100000Z" +
-  "&details=" + encodeURIComponent("Class of 2026 graduation ceremony — Tey Tey, Mak Oun Orn Jit, Nithpotiser & Manon.") +
-  "&location=" + encodeURIComponent("Sokha Hotel") +
-  "&ctz=Asia/Phnom_Penh";
+// Event: May 9, 2027, 12:30 PM – 5:00 PM Cambodia time (ICT, UTC+7)
+// In UTC: 05:30 → 10:00 on 2027-05-09
+const ICS_CONTENT = [
+  "BEGIN:VCALENDAR",
+  "VERSION:2.0",
+  "PRODID:-//Graduation Invitation//EN",
+  "CALSCALE:GREGORIAN",
+  "METHOD:PUBLISH",
+  "BEGIN:VEVENT",
+  "UID:graduation-2027-05-09@invitation",
+  "DTSTAMP:20260101T000000Z",
+  "DTSTART:20270509T053000Z",
+  "DTEND:20270509T100000Z",
+  "SUMMARY:Graduation Ceremony",
+  "DESCRIPTION:Class of 2027 graduation ceremony — Tey Tey\\, Mak Oun Orn Jit\\, Nithpotiser & Manon.",
+  "LOCATION:Sokha Hotel Phnom Penh",
+  // Reminder 1: 1 day before
+  "BEGIN:VALARM",
+  "ACTION:DISPLAY",
+  "DESCRIPTION:Graduation Ceremony tomorrow!",
+  "TRIGGER:-P1D",
+  "END:VALARM",
+  // Reminder 2: 5 hours before
+  "BEGIN:VALARM",
+  "ACTION:DISPLAY",
+  "DESCRIPTION:Graduation Ceremony in 5 hours!",
+  "TRIGGER:-PT5H",
+  "END:VALARM",
+  // Reminder 3: at start (event day)
+  "BEGIN:VALARM",
+  "ACTION:DISPLAY",
+  "DESCRIPTION:Graduation Ceremony starting now!",
+  "TRIGGER:PT0M",
+  "END:VALARM",
+  "END:VEVENT",
+  "END:VCALENDAR",
+].join("\r\n");
+
+const ICS_DATA_URL =
+  "data:text/calendar;charset=utf-8," + encodeURIComponent(ICS_CONTENT);
 
 const items = [
-  { icon: Calendar, label: "Date", value: "May 9, 2026" },
+  { icon: Calendar, label: "Date", value: "May 9, 2027" },
   { icon: Clock, label: "Time", value: "12:30 – 5:00 PM" },
   { icon: MapPin, label: "Location", value: "Sokha Hotel Phnom Penh" },
 ];
@@ -22,8 +55,8 @@ export const CeremonyDetails = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  DETAILS  ★</p>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-ink">
-            Ceremony <span className="gold-underline">Details</span>
+          <h2 className="font-display text-lg sm:text-2xl md:text-3xl text-ink leading-tight">
+            Ceremony <span className="text-gold">Details</span>
           </h2>
         </div>
 
@@ -40,22 +73,24 @@ export const CeremonyDetails = () => {
                 <Icon className="w-7 h-7 text-gold" strokeWidth={2} />
               </div>
               <div className="font-pixel text-[9px] text-sky tracking-[0.25em] mb-3">{label.toUpperCase()}</div>
-              <div className="font-display text-2xl sm:text-[1.65rem] text-ink leading-tight">{value}</div>
+              <div className="font-display text-sm sm:text-base text-ink leading-snug">{value}</div>
             </div>
           ))}
         </div>
 
         <div className="text-center">
           <a
-            href={GCAL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={ICS_DATA_URL}
+            download="graduation-ceremony.ics"
             onClick={playClick}
             className="btn-primary"
           >
             <CalendarPlus className="w-5 h-5" />
-            Add to Google Calendar
+            Add to Calendar
           </a>
+          <p className="mt-4 text-xs text-ink-soft" style={{ fontFamily: "'Nunito', sans-serif" }}>
+            Includes reminders 1 day before, 5 hours before, and at start.
+          </p>
         </div>
       </div>
     </section>

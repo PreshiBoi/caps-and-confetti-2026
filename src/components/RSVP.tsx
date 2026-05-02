@@ -55,8 +55,8 @@ export const RSVP = () => {
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
           <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  RSVP  ★</p>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-ink">
-            Will You <span className="gold-underline">Join Us?</span>
+          <h2 className="font-display text-lg sm:text-2xl md:text-3xl text-ink leading-tight">
+            Will You <span className="text-gold">Join Us?</span>
           </h2>
         </div>
 
@@ -71,7 +71,7 @@ export const RSVP = () => {
               <div className="mx-auto mb-5 w-20 h-20 rounded-full flex items-center justify-center" style={{ background: "var(--gradient-gold-soft)" }}>
                 <CheckCircle2 className="w-10 h-10 text-gold" />
               </div>
-              <h3 className="font-display text-3xl text-ink mb-2">Thank you!</h3>
+              <h3 className="font-display text-xl sm:text-2xl text-ink mb-2 leading-tight">Thank you!</h3>
               <p className="text-ink-soft">Your RSVP has been saved.</p>
               <button
                 onClick={() => { setSubmitted(false); setName(""); setMessage(""); }}
