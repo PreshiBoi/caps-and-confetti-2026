@@ -54,7 +54,7 @@ export const CeremonyDetails = () => {
     <section id="details" className="relative py-24 sm:py-32 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  DETAILS  ★</p>
+          <p className="font-pixel text-[18px] text-sky tracking-[0.3em] mb-5">★  DETAILS  ★</p>
           <h2 className="section-heading leading-tight">
             Ceremony <span className="text-gold">Details</span>
           </h2>

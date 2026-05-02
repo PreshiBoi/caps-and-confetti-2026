@@ -5,7 +5,7 @@ export const GroupPhoto = () => {
   return (
     <section className="relative py-24 sm:py-32 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto text-center">
-        <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  THE SQUAD  ★</p>
+        <p className="font-pixel text-[18px] text-sky tracking-[0.3em] mb-5">★  THE SQUAD  ★</p>
         <h2 className="section-heading mb-12 leading-tight">
           Our Graduation <span className="text-gold">Squad</span>
         </h2>

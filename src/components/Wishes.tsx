@@ -54,7 +54,7 @@ export const Wishes = () => {
     <section id="wishes" className="relative py-24 sm:py-32 px-4 sm:px-6">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
-          <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  WISHES  ★</p>
+          <p className="font-pixel text-[18px] text-sky tracking-[0.3em] mb-5">★  WISHES  ★</p>
           <h2 className="section-heading leading-tight">
             Leave Us a <span className="text-gold">Wish</span>
           </h2>

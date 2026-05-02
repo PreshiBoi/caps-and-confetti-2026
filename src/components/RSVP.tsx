@@ -54,7 +54,7 @@ export const RSVP = () => {
     <section id="rsvp" className="relative py-24 sm:py-32 px-4 sm:px-6">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
-          <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  RSVP  ★</p>
+          <p className="font-pixel text-[18px] text-sky tracking-[0.3em] mb-5">★  RSVP  ★</p>
           <h2 className="section-heading leading-tight">
             Will You <span className="text-gold">Join Us?</span>
           </h2>
