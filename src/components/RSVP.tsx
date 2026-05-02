@@ -89,7 +89,7 @@ export const RSVP = () => {
                   onChange={(e) => setName(e.target.value)}
                   maxLength={80}
                   className="input-field"
-                  placeholder="e.g. Sokha"
+                  placeholder="Nithpotism"
                   required
                 />
               </div>
