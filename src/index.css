@@ -132,6 +132,15 @@
     line-height: 1.35;
   }
 
+  .section-heading {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    color: hsl(var(--ink));
+  }
+
   .gold-underline {
     display: inline-block;
     color: hsl(var(--gold));
@@ -194,6 +203,8 @@
     box-shadow: var(--shadow-gold);
     font-weight: 700;
     letter-spacing: 0.05em;
+    font-size: 12px;
+    line-height: 3;
   }
 
   .btn-primary:hover {
@@ -217,6 +228,8 @@
     box-shadow: 0 4px 14px -6px hsl(197 60% 50% / 0.3);
     font-weight: 700;
     letter-spacing: 0.05em;
+    font-size: 12px;
+    line-height: 3;
   }
 
   .btn-secondary:hover {

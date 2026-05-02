@@ -55,7 +55,7 @@ export const CeremonyDetails = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  DETAILS  ★</p>
-          <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-ink leading-tight">
+          <h2 className="section-heading leading-tight">
             Ceremony <span className="text-gold">Details</span>
           </h2>
         </div>

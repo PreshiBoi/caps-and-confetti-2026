@@ -55,7 +55,7 @@ export const RSVP = () => {
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
           <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  RSVP  ★</p>
-          <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-ink leading-tight">
+          <h2 className="section-heading leading-tight">
             Will You <span className="text-gold">Join Us?</span>
           </h2>
         </div>
