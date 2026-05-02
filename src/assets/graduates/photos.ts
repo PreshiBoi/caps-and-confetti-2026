@@ -16,8 +16,8 @@ import groupPhoto from "./GROUP_PHOTO.jpg";
 export const GROUP_PHOTO: string | null = groupPhoto;
 
 // ---- Individual graduate photos ----
-import mike from "./Tey Tey.jpeg";
-import alex from "./Mak Oun Orn Jit.jpg";
+import mike from "./TeyTey.jpeg";
+import alex from "./MakOunOrnJit.jpg";
 import manith from "./Nithpotiser.jpeg";
 import nithpotism from "./Manon.jpg";
 
