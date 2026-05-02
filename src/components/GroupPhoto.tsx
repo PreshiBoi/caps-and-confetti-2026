@@ -26,7 +26,7 @@ export const GroupPhoto = () => {
           >
             <div className="absolute inset-3 rounded-[1.5rem] border border-white/60 pointer-events-none z-10" />
             {GROUP_PHOTO ? (
-              <img src={GROUP_PHOTO} alt="Graduation squad group photo" className="absolute inset-0 w-full h-full object-contain" />
+              <img src={GROUP_PHOTO} alt="Graduation squad group photo - Class of 2026" className="absolute inset-0 w-full h-full object-cover" />
             ) : (
               <div className="text-center p-8 relative">
                 <div className="mx-auto mb-5 w-20 h-20 rounded-full bg-white/70 flex items-center justify-center">
