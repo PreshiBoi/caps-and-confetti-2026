@@ -44,9 +44,9 @@ export const Hero = () => {
             </div>
           </div>
 
-          <h1 className="font-display text-[2.5rem] sm:text-6xl md:text-7xl leading-[1.05] text-ink mb-6">
+          <h1 className="font-display text-xl sm:text-3xl md:text-4xl leading-[1.5] text-ink mb-6">
             You're Invited to Our<br />
-            <span className="gold-underline">Graduation</span> Ceremony
+            <span className="text-gold">Graduation</span> Ceremony
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-ink-soft mb-12 max-w-xl mx-auto leading-relaxed">
