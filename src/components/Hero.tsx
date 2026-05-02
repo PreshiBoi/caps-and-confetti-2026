@@ -44,7 +44,7 @@ export const Hero = () => {
             </div>
           </div>
 
-          <h1 className="section-heading leading-[1.6] mb-6" style={{ fontSize: "30px" }}>
+          <h1 className="section-heading leading-[1.6] mb-6" style={{ fontSize: "27px" }}>
             You're Invited to Our<br />
             <span className="text-gold">Graduation</span> Ceremony
           </h1>
