@@ -101,7 +101,7 @@ export const Wishes = () => {
                   maxLength={500}
                   rows={4}
                   className="input-field resize-none"
-                  placeholder="Share a kind word, memory, or blessing..."
+                  placeholder="Share some kind words, memories, or blessings..."
                   required
                 />
                 <p className="text-xs text-ink-soft mt-1.5 text-right font-pixel tracking-wider">{wish.length}/500</p>
