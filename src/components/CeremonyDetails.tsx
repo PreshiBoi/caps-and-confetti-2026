@@ -1,46 +1,18 @@
 import { Calendar, Clock, MapPin, CalendarPlus } from "lucide-react";
 import { useAudio } from "@/contexts/AudioContext";
 
-// Event: May 9, 2026, 12:30 PM – 5:00 PM Cambodia time (ICT, UTC+7)
-// In UTC: 05:30 → 10:00 on 2026-05-09
-const ICS_CONTENT = [
-  "BEGIN:VCALENDAR",
-  "VERSION:2.0",
-  "PRODID:-//Graduation Invitation//EN",
-  "CALSCALE:GREGORIAN",
-  "METHOD:PUBLISH",
-  "BEGIN:VEVENT",
-  "UID:graduation-2026-05-09@invitation",
-  "DTSTAMP:20260101T000000Z",
-  "DTSTART:20260509T053000Z",
-  "DTEND:20260509T100000Z",
-  "SUMMARY:Graduation Ceremony",
-  "DESCRIPTION:Class of 2026 graduation ceremony — Tey Tey\\, Mak Oun Orn Jit\\, Nithpotiser & Manon.",
-  "LOCATION:Sokha Hotel Phnom Penh",
-  // Reminder 1: 1 day before
-  "BEGIN:VALARM",
-  "ACTION:DISPLAY",
-  "DESCRIPTION:Graduation Ceremony tomorrow!",
-  "TRIGGER:-P1D",
-  "END:VALARM",
-  // Reminder 2: 5 hours before
-  "BEGIN:VALARM",
-  "ACTION:DISPLAY",
-  "DESCRIPTION:Graduation Ceremony in 5 hours!",
-  "TRIGGER:-PT5H",
-  "END:VALARM",
-  // Reminder 3: at start (event day)
-  "BEGIN:VALARM",
-  "ACTION:DISPLAY",
-  "DESCRIPTION:Graduation Ceremony starting now!",
-  "TRIGGER:PT0M",
-  "END:VALARM",
-  "END:VEVENT",
-  "END:VCALENDAR",
-].join("\r\n");
-
-const ICS_DATA_URL =
-  "data:text/calendar;charset=utf-8," + encodeURIComponent(ICS_CONTENT);
+// Event: May 9, 2026, 12:30 PM – 5:00 PM Cambodia time (Asia/Phnom_Penh)
+const GOOGLE_CALENDAR_URL = (() => {
+  const params = new URLSearchParams({
+    action: "TEMPLATE",
+    text: "Graduation Ceremony: Vatey, Channeath, Manith, Piseth",
+    dates: "20260509T123000/20260509T170000",
+    ctz: "Asia/Phnom_Penh",
+    location: "Sokha Hotel Phnom Penh",
+    details: "You're invited to our Graduation Ceremony!\n\nDate: May 9, 2026\nTime: 12:30 PM – 5:00 PM\nLocation: Sokha Hotel Phnom Penh\n\nReminders: Please set reminders 1 day before, 5 hours before, and at the start of the event.",
+  });
+  return `https://calendar.google.com/calendar/r/eventedit?${params.toString()}`;
+})();
 
 const items = [
   { icon: Calendar, label: "Date", value: "May 9, 2026" },
@@ -80,16 +52,17 @@ export const CeremonyDetails = () => {
 
         <div className="text-center">
           <a
-            href={ICS_DATA_URL}
-            download="graduation-ceremony.ics"
+            href={GOOGLE_CALENDAR_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={playClick}
             className="btn-primary"
           >
             <CalendarPlus className="w-5 h-5" />
-            Add to Calendar
+            Add to Google Calendar
           </a>
-          <p className="mt-4 text-xs text-ink-soft" style={{ fontFamily: "'Nunito', sans-serif" }}>
-            Includes reminders 1 day before, 5 hours before, and at start.
+          <p className="mt-4 text-9px text-ink-soft" style={{ fontFamily: "'Nunito', sans-serif" }}>
+            Opens Google Calendar. Tap Save to add the event.
           </p>
         </div>
       </div>
