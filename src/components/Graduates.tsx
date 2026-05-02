@@ -14,7 +14,7 @@ export const Graduates = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  THE GRADUATES  ★</p>
-          <h2 className="font-display text-lg sm:text-2xl md:text-3xl text-ink leading-tight">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-ink leading-tight">
             Meet the <span className="text-gold">Graduates</span>
           </h2>
         </div>
@@ -50,7 +50,7 @@ export const Graduates = () => {
 
                 <div className="flex items-center justify-center gap-2 mb-3">
                   <GraduationCap className="w-4 h-4 text-gold" />
-                  <h3 className="font-display text-sm sm:text-base text-ink leading-tight">{g.name}</h3>
+                  <h3 className="font-display text-base sm:text-lg font-bold text-ink leading-tight">{g.name}</h3>
                 </div>
 
                 <div className="h-px w-10 bg-sky mx-auto mb-4" />
