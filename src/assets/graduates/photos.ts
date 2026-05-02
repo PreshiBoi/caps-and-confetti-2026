@@ -12,23 +12,18 @@
 // =====================================================
 
 // ---- Group photo ----
-// import groupPhoto from "./group.jpg";
-export const GROUP_PHOTO: string | null = null;
-// export const GROUP_PHOTO: string | null = groupPhoto;
+import groupPhoto from "assets/graduates/group.jpg";
+export const GROUP_PHOTO: string | null = groupPhoto;
 
 // ---- Individual graduate photos ----
-// import mike from "./mike.jpg";
-// import alex from "./alex.jpg";
-// import manith from "./manith.jpg";
-// import nithpotism from "./nithpotism.jpg";
+import mike from "./Tey.jpg";
+import alex from "./Mak Oun Orn Jit.jpg";
+import manith from "./Nithpotiser.jpg";
+import nithpotism from "./Manon.jpg";
 
 export const GRAD_PHOTOS: Record<string, string | null> = {
-  Mike: null,
-  Alex: null,
-  Manith: null,
-  Nithpotism: null,
-  // Mike: mike,
-  // Alex: alex,
-  // Manith: manith,
-  // Nithpotism: nithpotism,
+  "Tey Tey": mike,
+  "Mak Oun Orn Jit": alex,
+  "Nithpotiser": manith,
+  "Manon": nithpotism,
 };
