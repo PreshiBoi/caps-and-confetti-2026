@@ -14,7 +14,7 @@ export const Graduates = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  THE GRADUATES  ★</p>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-ink leading-tight">
+          <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-ink leading-tight">
             Meet the <span className="text-gold">Graduates</span>
           </h2>
         </div>
