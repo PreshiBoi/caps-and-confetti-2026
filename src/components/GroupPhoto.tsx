@@ -17,7 +17,7 @@ export const GroupPhoto = () => {
           <div className="absolute -bottom-8 -right-4 text-gold text-xl animate-sparkle" style={{ animationDelay: "0.3s" }}>★</div>
 
           <div
-            className="relative aspect-[16/10] rounded-[2rem] overflow-hidden flex items-center justify-center"
+            className="relative aspect-[4/5] rounded-[2rem] overflow-hidden flex items-center justify-center"
             style={{
               background: "var(--gradient-gold-soft)",
               border: "3px solid hsl(var(--gold))",
@@ -26,7 +26,7 @@ export const GroupPhoto = () => {
           >
             <div className="absolute inset-3 rounded-[1.5rem] border border-white/60 pointer-events-none z-10" />
             {GROUP_PHOTO ? (
-              <img src={GROUP_PHOTO} alt="Graduation squad group photo" className="absolute inset-0 w-full h-full object-cover" />
+              <img src={GROUP_PHOTO} alt="Graduation squad group photo" className="absolute inset-0 w-full h-full object-contain" />
             ) : (
               <div className="text-center p-8 relative">
                 <div className="mx-auto mb-5 w-20 h-20 rounded-full bg-white/70 flex items-center justify-center">

@@ -41,7 +41,7 @@ export const Graduates = () => {
                     }}
                   >
                     {photo ? (
-                      <img src={photo} alt={g.name} className="w-full h-full object-cover" />
+                      <img src={photo} alt={g.name} className="w-full h-full object-contain" />
                     ) : (
                       <User className="w-12 h-12 text-gold" strokeWidth={1.5} />
                     )}
