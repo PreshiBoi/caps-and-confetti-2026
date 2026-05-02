@@ -29,7 +29,7 @@ export const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-cream-warm/90 border border-gold/40 mb-10">
             <Sparkles className="w-3 h-3 text-gold" />
-            <span className="font-pixel text-[10px] text-ink tracking-[0.18em]">CLASS OF 2026</span>
+            <span className="font-pixel text-[18px] text-ink tracking-[0.18em]">CLASS OF 2026</span>
             <Sparkles className="w-3 h-3 text-gold" />
           </div>
 
@@ -62,7 +62,7 @@ export const Hero = () => {
             ].map((c) => (
               <div key={c.l} className="rounded-2xl bg-cream-warm/70 border border-gold/40 px-4 py-4 text-center">
                 <div className="font-pixel text-[10px] text-sky tracking-[0.2em] mb-2">{c.l.toUpperCase()}</div>
-                <div className="font-display font-bold text-ink leading-snug" style={{ fontSize: "15px" }}>{c.v}</div>
+                <div className="font-display font-bold text-ink leading-snug" style={{ fontSize: "12px" }}>{c.v}</div>
               </div>
             ))}
           </div>

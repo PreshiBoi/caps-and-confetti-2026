@@ -13,7 +13,7 @@ export const Graduates = () => {
     <section className="relative py-24 sm:py-32 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  THE GRADUATES  ★</p>
+          <p className="font-pixel text-[18px] text-sky tracking-[0.3em] mb-5">★  THE GRADUATES  ★</p>
           <h2 className="section-heading leading-tight">
             Meet the <span className="text-gold">Graduates</span>
           </h2>
