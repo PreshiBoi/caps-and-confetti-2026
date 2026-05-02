@@ -1,8 +1,8 @@
 import { Calendar, Clock, MapPin, CalendarPlus } from "lucide-react";
 import { useAudio } from "@/contexts/AudioContext";
 
-// Event: May 9, 2027, 12:30 PM – 5:00 PM Cambodia time (ICT, UTC+7)
-// In UTC: 05:30 → 10:00 on 2027-05-09
+// Event: May 9, 2026, 12:30 PM – 5:00 PM Cambodia time (ICT, UTC+7)
+// In UTC: 05:30 → 10:00 on 2026-05-09
 const ICS_CONTENT = [
   "BEGIN:VCALENDAR",
   "VERSION:2.0",
@@ -10,12 +10,12 @@ const ICS_CONTENT = [
   "CALSCALE:GREGORIAN",
   "METHOD:PUBLISH",
   "BEGIN:VEVENT",
-  "UID:graduation-2027-05-09@invitation",
+  "UID:graduation-2026-05-09@invitation",
   "DTSTAMP:20260101T000000Z",
-  "DTSTART:20270509T053000Z",
-  "DTEND:20270509T100000Z",
+  "DTSTART:20260509T053000Z",
+  "DTEND:20260509T100000Z",
   "SUMMARY:Graduation Ceremony",
-  "DESCRIPTION:Class of 2027 graduation ceremony — Tey Tey\\, Mak Oun Orn Jit\\, Nithpotiser & Manon.",
+  "DESCRIPTION:Class of 2026 graduation ceremony — Tey Tey\\, Mak Oun Orn Jit\\, Nithpotiser & Manon.",
   "LOCATION:Sokha Hotel Phnom Penh",
   // Reminder 1: 1 day before
   "BEGIN:VALARM",
@@ -43,7 +43,7 @@ const ICS_DATA_URL =
   "data:text/calendar;charset=utf-8," + encodeURIComponent(ICS_CONTENT);
 
 const items = [
-  { icon: Calendar, label: "Date", value: "May 9, 2027" },
+  { icon: Calendar, label: "Date", value: "May 9, 2026" },
   { icon: Clock, label: "Time", value: "12:30 – 5:00 PM" },
   { icon: MapPin, label: "Location", value: "Sokha Hotel Phnom Penh" },
 ];

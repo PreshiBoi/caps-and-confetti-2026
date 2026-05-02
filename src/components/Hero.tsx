@@ -29,7 +29,7 @@ export const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-cream-warm/90 border border-gold/40 mb-10">
             <Sparkles className="w-3 h-3 text-gold" />
-            <span className="font-pixel text-[10px] text-ink tracking-[0.18em]">CLASS OF 2027</span>
+            <span className="font-pixel text-[10px] text-ink tracking-[0.18em]">CLASS OF 2026</span>
             <Sparkles className="w-3 h-3 text-gold" />
           </div>
 
@@ -56,7 +56,7 @@ export const Hero = () => {
           {/* Info chips */}
           <div className="grid sm:grid-cols-3 gap-3 sm:gap-4 max-w-2xl mx-auto mb-12">
             {[
-              { l: "Date", v: "May 9, 2027" },
+              { l: "Date", v: "May 9, 2026" },
               { l: "Time", v: "12:30 – 5:00 PM" },
               { l: "Where", v: "Cambodia" },
             ].map((c) => (
