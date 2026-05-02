@@ -12,13 +12,13 @@
 // =====================================================
 
 // ---- Group photo ----
-import groupPhoto from "assets/graduates/group.jpg";
+import groupPhoto from "./GROUP_PHOTO.jpg";
 export const GROUP_PHOTO: string | null = groupPhoto;
 
 // ---- Individual graduate photos ----
-import mike from "./Tey.jpg";
+import mike from "./Tey Tey.jpeg";
 import alex from "./Mak Oun Orn Jit.jpg";
-import manith from "./Nithpotiser.jpg";
+import manith from "./Nithpotiser.jpeg";
 import nithpotism from "./Manon.jpg";
 
 export const GRAD_PHOTOS: Record<string, string | null> = {
