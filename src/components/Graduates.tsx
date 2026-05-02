@@ -31,7 +31,7 @@ export const Graduates = () => {
                 <div className="absolute top-3 right-4 text-sky text-xs group-hover:text-gold transition-colors">★</div>
                 <div className="absolute bottom-3 left-4 text-gold/50 text-xs">✦</div>
 
-                <div className="relative mx-auto mb-5 w-32 aspect-[3/4]">
+                <div className="relative mx-auto mb-5 w-44 aspect-[3/4]">
                   <div className="absolute inset-0 rounded-lg bg-gold-glow blur-md opacity-60 group-hover:opacity-100 transition-opacity" />
                   <div
                     className="relative w-full h-full rounded-lg overflow-hidden flex items-center justify-center"
@@ -41,7 +41,7 @@ export const Graduates = () => {
                     }}
                   >
                     {photo ? (
-                      <img src={photo} alt={g.name} className="w-full h-full object-cover" />
+                      <img src={photo} alt={`Portrait of ${g.name}, Class of 2026 Graduate`} className="w-full h-full object-cover" />
                     ) : (
                       <User className="w-12 h-12 text-gold" strokeWidth={1.5} />
                     )}
