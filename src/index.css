@@ -161,7 +161,7 @@
   }
   .input-field:focus { border-color: hsl(var(--gold)); background: white; box-shadow: 0 0 0 4px hsl(var(--gold) / 0.12); }
 
-  .label-pixel { @apply font-pixel text-[9px] tracking-[0.18em] text-ink-soft mb-2.5 block uppercase; }
+  .label-pixel { @apply font-pixel text-[10px] tracking-[0.18em] text-ink mb-2.5 block uppercase font-bold; }
 
   @keyframes floatY {
     0%, 100% { transform: translateY(0) rotate(0deg); }
