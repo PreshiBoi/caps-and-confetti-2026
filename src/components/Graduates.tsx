@@ -2,10 +2,10 @@ import { GraduationCap, User } from "lucide-react";
 import { GRAD_PHOTOS } from "@/assets/graduates/photos";
 
 const grads = [
-  { name: "Mike", quote: "Graduated with honors in surviving deadlines." },
-  { name: "Alex", quote: "Professional overthinker, certified graduate." },
-  { name: "Manith", quote: "My GPA may vary, but my confidence is HD." },
-  { name: "Nithpotism", quote: "From student mode to unemployed legend mode." },
+  { name: "Tey Tey", quote: "Graduated with honors in surviving deadlines." },
+  { name: "Mak Oun Orn Jit", quote: "Professional overthinker, certified graduate." },
+  { name: "Nithpotiser", quote: "My GPA may vary, but my confidence is HD." },
+  { name: "Manon", quote: "From student mode to unemployed legend mode." },
 ];
 
 export const Graduates = () => {
