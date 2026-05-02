@@ -50,7 +50,7 @@ export const Graduates = () => {
 
                 <div className="flex items-center justify-center gap-2 mb-3">
                   <GraduationCap className="w-4 h-4 text-gold" />
-                  <h3 className="font-display text-sm sm:text-base text-ink leading-tight">{g.name}</h3>
+                  <h3 className="font-display text-base sm:text-lg font-bold text-ink leading-tight">{g.name}</h3>
                 </div>
 
                 <div className="h-px w-10 bg-sky mx-auto mb-4" />

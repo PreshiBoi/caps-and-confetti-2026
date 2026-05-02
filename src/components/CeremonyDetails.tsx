@@ -72,8 +72,8 @@ export const CeremonyDetails = () => {
               >
                 <Icon className="w-7 h-7 text-gold" strokeWidth={2} />
               </div>
-              <div className="font-pixel text-[9px] text-sky tracking-[0.25em] mb-3">{label.toUpperCase()}</div>
-              <div className="font-display text-sm sm:text-base text-ink leading-snug">{value}</div>
+              <div className="font-pixel text-[10px] text-sky tracking-[0.25em] mb-3">{label.toUpperCase()}</div>
+              <div className="font-display text-base sm:text-lg font-bold text-ink leading-snug">{value}</div>
             </div>
           ))}
         </div>

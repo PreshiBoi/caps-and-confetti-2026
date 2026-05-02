@@ -44,7 +44,7 @@ export const Hero = () => {
             </div>
           </div>
 
-          <h1 className="font-display text-xl sm:text-3xl md:text-4xl leading-[1.5] text-ink mb-6">
+          <h1 className="font-display text-2xl sm:text-4xl md:text-5xl font-bold leading-[1.6] text-ink mb-6">
             You're Invited to Our<br />
             <span className="text-gold">Graduation</span> Ceremony
           </h1>
@@ -60,9 +60,9 @@ export const Hero = () => {
               { l: "Time", v: "12:30 – 5:00 PM" },
               { l: "Where", v: "Cambodia" },
             ].map((c) => (
-              <div key={c.l} className="rounded-2xl bg-cream-warm/70 border border-gold/25 px-4 py-4">
-                <div className="font-pixel text-[8px] text-sky tracking-[0.2em] mb-1.5">{c.l.toUpperCase()}</div>
-                <div className="font-display text-xs sm:text-sm text-ink leading-snug">{c.v}</div>
+              <div key={c.l} className="rounded-2xl bg-cream-warm/70 border border-gold/40 px-4 py-4">
+                <div className="font-pixel text-[10px] text-sky tracking-[0.2em] mb-2">{c.l.toUpperCase()}</div>
+                <div className="font-display text-sm sm:text-base font-bold text-ink leading-snug">{c.v}</div>
               </div>
             ))}
           </div>
