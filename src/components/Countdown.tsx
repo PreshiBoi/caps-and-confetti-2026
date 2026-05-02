@@ -25,7 +25,7 @@ export const Countdown = () => {
     <section id="countdown" className="relative py-24 sm:py-32 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto text-center">
         <p className="font-pixel text-[10px] text-sky tracking-[0.3em] mb-5">★  COUNTDOWN  ★</p>
-        <h2 className="section-heading mb-4 leading-tight">
+        <h2 className="countdown-heading mb-4 leading-tight">
           Countdown to <span className="text-gold">Our Big Day</span>
         </h2>
         <p className="text-ink-soft text-base sm:text-lg mb-14 max-w-xl mx-auto">

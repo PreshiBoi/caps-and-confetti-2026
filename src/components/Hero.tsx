@@ -44,7 +44,7 @@ export const Hero = () => {
             </div>
           </div>
 
-          <h1 className="section-heading leading-[1.6] mb-6">
+          <h1 className="section-heading leading-[1.6] mb-6" style={{ fontSize: "30px" }}>
             You're Invited to Our<br />
             <span className="text-gold">Graduation</span> Ceremony
           </h1>
@@ -62,7 +62,7 @@ export const Hero = () => {
             ].map((c) => (
               <div key={c.l} className="rounded-2xl bg-cream-warm/70 border border-gold/40 px-4 py-4 text-center">
                 <div className="font-pixel text-[10px] text-sky tracking-[0.2em] mb-2">{c.l.toUpperCase()}</div>
-                <div className="font-display text-sm sm:text-base font-bold text-ink leading-snug">{c.v}</div>
+                <div className="font-display font-bold text-ink leading-snug" style={{ fontSize: "15px" }}>{c.v}</div>
               </div>
             ))}
           </div>

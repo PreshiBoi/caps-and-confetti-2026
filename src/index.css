@@ -141,6 +141,15 @@
     color: hsl(var(--ink));
   }
 
+  .countdown-heading {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    color: hsl(var(--ink));
+  }
+
   .gold-underline {
     display: inline-block;
     color: hsl(var(--gold));
