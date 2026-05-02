@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Fraunces', 'Georgia', 'serif'],
+        display: ['"Press Start 2P"', 'monospace'],
         body: ['Nunito', 'system-ui', 'sans-serif'],
         pixel: ['"Press Start 2P"', 'monospace'],
       },

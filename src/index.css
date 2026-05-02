@@ -188,10 +188,12 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full font-semibold text-white transition-all;
+    @apply inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-xs text-white transition-all;
     font-family: 'Press Start 2P', monospace;
     background: var(--gradient-gold);
     box-shadow: var(--shadow-gold);
+    font-weight: 700;
+    letter-spacing: 0.05em;
   }
 
   .btn-primary:hover {
@@ -199,16 +201,36 @@
     box-shadow: 0 22px 56px -16px hsl(43 79% 46% / 0.55);
   }
 
+  .btn-primary:focus {
+    outline: 2px solid hsl(var(--gold));
+    outline-offset: 2px;
+  }
+
+  .btn-primary:focus:not(:focus-visible) {
+    outline: none;
+  }
+
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full font-semibold text-ink bg-white transition-all;
+    @apply inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-xs text-ink bg-white transition-all;
     font-family: 'Press Start 2P', monospace;
     border: 2px solid hsl(var(--sky));
     box-shadow: 0 4px 14px -6px hsl(197 60% 50% / 0.3);
+    font-weight: 700;
+    letter-spacing: 0.05em;
   }
 
   .btn-secondary:hover {
     transform: translateY(-2px);
     background: hsl(var(--sky-soft) / 0.4);
+  }
+
+  .btn-secondary:focus {
+    outline: 2px solid hsl(var(--sky));
+    outline-offset: 2px;
+  }
+
+  .btn-secondary:focus:not(:focus-visible) {
+    outline: none;
   }
 
   .input-field {
@@ -219,7 +241,7 @@
   .input-field:focus {
     border-color: hsl(var(--gold));
     background: white;
-    box-shadow: 0 0 0 4px hsl(var(--gold) / 0.12);
+    box-shadow: 0 0 0 4px hsl(var(--gold) / 0.12), inset 0 0 0 2px hsl(var(--gold) / 0.25);
   }
 
   .label-pixel {
