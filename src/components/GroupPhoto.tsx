@@ -40,9 +40,9 @@ export const GroupPhoto = () => {
             )}
           </div>
         </div>
-        <div className="mt-10 text-base sm:text-lg text-ink-soft italic max-w-xl mx-auto" style={{ fontFamily: "'Nunito', sans-serif" } italic text-sky tracking-[0.3em] mb-4">★  Built from chaos, powered by memories, finished with caps & honors  ★</div>
-        {/* <p className="mt-10 text-base sm:text-lg text-ink-soft italic max-w-xl mx-auto" style={{ fontFamily: "'Nunito', sans-serif" }}>
-          ✦ Built from chaos, powered by memories, finished with caps & honors ✦ */}
+        {/* <div className="mt-10 text-base sm:text-lg text-ink-soft italic max-w-xl mx-auto" style={{ fontFamily: "'Nunito', sans-serif" } italic text-sky tracking-[0.3em] mb-4">★  Built from chaos, powered by memories, finished with caps & honors  ★</div> */}
+        <p className="mt-10 text-base sm:text-lg text-ink-soft italic max-w-xl mx-auto" style={{ fontFamily: "'Nunito', sans-serif" }}>
+          ✦ Built from chaos, powered by memories, finished with caps & honors ✦
         </p>
       </div>
     </section>
