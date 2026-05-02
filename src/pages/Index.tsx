@@ -29,6 +29,9 @@ const Index = () => {
             <p className="text-ink-soft italic text-base sm:text-lg">
               Made with friendship, deadlines, and a little bit of panic.
             </p>
+            <p className="text-ink-soft italic text-base sm:text-lg">
+              Honorable Mentions: Chipmonk, Kolney, Soma Vatey. See you on ur graudation, class of 2027 ;3
+            </p>
           </div>
         </footer>
 
