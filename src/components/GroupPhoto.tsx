@@ -17,7 +17,7 @@ export const GroupPhoto = () => {
           <div className="absolute -bottom-8 -right-4 text-gold text-xl animate-sparkle" style={{ animationDelay: "0.3s" }}>★</div>
 
           <div
-            className="relative aspect-[4/5] rounded-[2rem] overflow-hidden flex items-center justify-center"
+            className="relative aspect-[16/10] rounded-[2rem] overflow-hidden flex items-center justify-center"
             style={{
               background: "var(--gradient-gold-soft)",
               border: "3px solid hsl(var(--gold))",
