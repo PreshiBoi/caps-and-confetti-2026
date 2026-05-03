@@ -27,7 +27,7 @@ const Index = () => {
           <div className="max-w-2xl mx-auto">
             <div className="font-pixel text-[18px] text-sky tracking-[0.3em] mb-4">★  CLASS OF 2026  ★</div>
             <p className="text-ink-soft italic text-base sm:text-lg">
-              Made with friendship, deadlines, and a little bit of panic.
+              Made with friendship, deadlines, and a little bit of orn jit.
             </p>
             <p className="text-ink-soft italic text-base sm:text-lg">
               Honorable Mentions: Chipmonk, Kolney, Soma Vatey. See you on ur graudation, class of 2027 ;3
