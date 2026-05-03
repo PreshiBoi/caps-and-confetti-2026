@@ -25,7 +25,7 @@ const Index = () => {
 
         <footer className="py-16 px-4 text-center">
           <div className="max-w-2xl mx-auto">
-            <div className="font-pixel text-[18px] text-sky tracking-[0.3em] mb-4">★  CLASS OF 2026  ★</div>
+            <div className="font-pixel text-[15px] text-sky tracking-[0.3em] mb-4">★  CLASS OF 2026  ★</div>
             <p className="text-ink-soft italic text-base sm:text-lg">
               Made with friendship, deadlines, and a little bit of orn jit.
             </p>
