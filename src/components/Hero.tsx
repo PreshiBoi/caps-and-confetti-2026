@@ -29,7 +29,7 @@ export const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-cream-warm/90 border border-gold/40 mb-10">
             <Sparkles className="w-3 h-3 text-gold" />
-            <span className="font-pixel text-[18px] text-ink tracking-[0.18em]">CLASS OF 2026</span>
+            <span className="font-pixel text-[15px] text-ink tracking-[0.18em]">CLASS OF 2026</span>
             <Sparkles className="w-3 h-3 text-gold" />
           </div>
 
