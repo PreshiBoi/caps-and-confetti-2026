@@ -1,7 +1,7 @@
 import { GraduationCap, User } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { GRAD_PHOTOS } from "@/assets/graduates/photos";
-import { useBlurUp } from "@/hooks/useBlurUp";
+import { useBlurUp } from "@/hooks/useBlurUp.ts";
 
 const grads = [
   { name: "Tey Tey", quote: "Graduated with honors in surviving deadlines." },
