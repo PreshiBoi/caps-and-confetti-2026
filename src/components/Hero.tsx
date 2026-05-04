@@ -58,7 +58,7 @@ export const Hero = () => {
             {[
               { l: "Date", v: "May 9, 2026" },
               { l: "Time", v: "12:30 – 5:00 PM" },
-              { l: "Where", v: "Sokha Hotel Phnom Penh" },
+              { l: "Location", v: "Sokha Hotel Phnom Penh" },
             ].map((c) => (
               <div key={c.l} className="rounded-2xl bg-cream-warm/70 border border-gold/40 info-chip text-center">
                 <div className="font-pixel text-[10px] text-sky tracking-[0.2em] mb-2">{c.l.toUpperCase()}</div>
