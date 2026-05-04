@@ -85,7 +85,7 @@ export const GroupPhoto = () => {
         </div>
 
         <p className="mt-10 text-base sm:text-lg text-ink-soft italic max-w-xl mx-auto" style={{ fontFamily: "'Nunito', sans-serif" }}>
-          "Together we survived deadlines, exams, and group projects."
+          "Built from chaos, powered by alcohol, finished with caps & honors ★"
         </p>
       </div>
     </section>
