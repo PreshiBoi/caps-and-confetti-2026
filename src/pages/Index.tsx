@@ -27,10 +27,10 @@ const Index = () => {
           <div className="max-w-2xl mx-auto">
             <div className="font-pixel text-[18px] text-sky tracking-[0.3em] mb-4">★  CLASS OF 2026  ★</div>
             <p className="text-ink-soft italic text-base sm:text-lg">
-              Made with friendship, deadlines, and a little bit of orn jit.
+              Made with luvvvvv, friendship, deadlines, and one hell alot of orn jit :)
             </p>
             <p className="text-ink-soft italic text-base sm:text-lg">
-              Honorable Mentions: Chipmonk, Kolney, Soma Vatey. See you on ur graudation, class of 2027 ;3
+              Honorable Mentions: Soma Vatey, Kolney, chhy. See you on ur graudation, class of 2027 ;3
             </p>
           </div>
         </footer>
