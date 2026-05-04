@@ -24,7 +24,7 @@ export const AudioProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const a = new Audio(MUSIC_SRC);
     a.loop = true;
-    a.volume = 0.9;
+    a.volume = 0.18;
     a.preload = "auto";
     (a as any).playsInline = true;
     audioRef.current = a;
