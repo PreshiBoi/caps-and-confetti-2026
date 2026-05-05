@@ -16,10 +16,10 @@ export const GROUP_PHOTO_PATH = "./GROUP_PHOTO.jpg";
 
 // ---- Individual graduate photos (dynamic imports) ----
 export const GRAD_PHOTOS_PATHS: Record<string, string> = {
-  "Tey Tey": "./TeyTey.jpeg",
-  "Mak Oun Orn Jit": "./MakOunOrnJit.jpg",
-  "Nithpotiser": "./Nithpotiser.jpeg",
-  "Manon": "./Manon.jpg",
+  "Vatey": "./TeyTey.jpeg",
+  "Zneath": "./MakOunOrnJit.jpg",
+  "Manith": "./Nithpotiser.jpeg",
+  "Piseth": "./Manon.jpg",
 };
 
 // Legacy exports for backwards compatibility
