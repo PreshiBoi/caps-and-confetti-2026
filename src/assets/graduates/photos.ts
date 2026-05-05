@@ -32,8 +32,8 @@ import manith from "./Nithpotiser.jpeg";
 import nithpotism from "./Manon.jpg";
 
 export const GRAD_PHOTOS: Record<string, string | null> = {
-  "Tey Tey": mike,
-  "Mak Oun Orn Jit": alex,
-  "Nithpotiser": manith,
-  "Manon": nithpotism,
+  "Vatey": mike,
+  "Zneath": alex,
+  "Manith": manith,
+  "Piseth": nithpotism,
 };
