@@ -4,10 +4,10 @@ import { GRAD_PHOTOS } from "@/assets/graduates/photos";
 import { useBlurUp } from "@/hooks/useBlurUp.ts";
 
 const grads = [
-  { name: "Tey Tey", quote: "Graduated with honors in surviving deadlines." },
-  { name: "Mak Oun Orn Jit", quote: "Professional overthinker, certified graduate." },
-  { name: "Nithpotiser", quote: "My GPA may vary, but my confidence is HD." },
-  { name: "Manon", quote: "From student mode to unemployed legend mode." },
+  { name: "Vatey", quote: "Graduated with honors in surviving deadlines." },
+  { name: "Zneath", quote: "1 degree hotter" },
+  { name: "Manith", quote: "My GPA may vary, but my confidence is HD." },
+  { name: "Piseth", quote: "Professional overthinker, certified graduate." },
 ];
 
 interface GraduateCardProps {
