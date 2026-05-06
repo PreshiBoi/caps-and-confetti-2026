@@ -85,7 +85,7 @@ export const GroupPhoto = () => {
         </div>
 
         <p className="mt-10 text-base sm:text-lg text-ink-soft italic max-w-xl mx-auto" style={{ fontFamily: "'Nunito', sans-serif" }}>
-          Built from chaos, powered by alcohol, finished with caps & honors ★
+          Built from chaos, powered by 4.0 gpa, finished with caps & honors ★
         </p>
       </div>
     </section>
