@@ -57,7 +57,7 @@ export const Hero = () => {
           <div className="grid sm:grid-cols-3 gap-3 sm:gap-4 max-w-2xl mx-auto mb-12">
             {[
               { l: "Date", v: "May 9, 2026" },
-              { l: "Time", v: "12:30 – 5:00 PM" },
+              { l: "Time", v: "1:00 – 5:00 PM" },
               { l: "Location", v: "Sokha Hotel Phnom Penh" },
             ].map((c) => (
               <div key={c.l} className="rounded-2xl bg-cream-warm/70 border border-gold/40 info-chip text-center">
