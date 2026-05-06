@@ -16,7 +16,7 @@ const GOOGLE_CALENDAR_URL = (() => {
 
 const items = [
   { icon: Calendar, label: "Date", value: "May 9, 2026" },
-  { icon: Clock, label: "Time", value: "12:30 – 5:00 PM" },
+  { icon: Clock, label: "Time", value: "1:00 – 5:00 PM" },
   { icon: MapPin, label: "Location", value: "Sokha Hotel Phnom Penh" },
 ];
 
